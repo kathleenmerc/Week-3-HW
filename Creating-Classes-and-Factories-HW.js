@@ -13,27 +13,27 @@ eatFood() - log "nibble nibble"
 getPrice() - return the price
 */
 
-// class Hamster {
-//     constructor (owner, name, price = 15) {
-//         this.owner = owner,
-//         this.name = name,
-//         this.price = price
-//     }
+class Hamster {
+    constructor (owner, name, price = 15) {
+        this.owner = owner,
+        this.name = name,
+        this.price = price
+    }
 
-//     wheelRun() {
-//         console.log("squeak squeak")
-//     }
+    wheelRun() {
+        console.log("squeak squeak")
+    }
 
-//     eatFood() {
-//         console.log("nibble nibble")
-//     }
+    eatFood() {
+        console.log("nibble nibble")
+    }
 
-//     getPrice() {
-//         return this.price
-//     }
-// }
+    getPrice() {
+        return this.price
+    }
+}
 
-// console.log(Hamster)
+console.log(Hamster)
 
 
 
@@ -60,76 +60,77 @@ ageUp() - increment age, increment height, increment weight, decrement mood, inc
 buyHamster(hamster) - push the hamster object onto the hamster array, increment mood by 10, decrement bankAccount by the value of the hamster (hint: use getPrice())
 */
 
-// class Person {
-//     constructor (name, age, height, weight, mood, hamsters, bankAccount) {
-//         this.name = name,
-//         this.age = age || 0,
-//         this.height = height || 0,
-//         this.weight = weight || 0,
-//         this.mood = mood || 0,
-//         this.hamsters = [],
-//         this.bankAccount = bankAccount || 0
-//     }
+class Person {
+    constructor (name, age, height, weight, mood, hamsters, bankAccount) {
+        this.name = name,
+        this.age = age || 0,
+        this.height = height || 0,
+        this.weight = weight || 0,
+        this.mood = mood || 0,
+        this.hamsters = [],
+        this.bankAccount = bankAccount || 0
+    }
 
-//     getName() {
-//         return this.name
-//     }
+    getName() {
+        return this.name
+    }
 
-//     getAge() {
-//         return this.age
-//     }
+    getAge() {
+        return this.age
+    }
 
-//     getWeight() {
-//         return this.weight
-//     }
+    getWeight() {
+        return this.weight
+    }
 
-//     greet() {
-//         console.log(`Hello ${this.name}!`)
-//     }
+    greet() {
+        console.log(`Hello ${this.name}!`)
+    }
 
-//     eat(num) {
-//         if (num) {
-//             this.weight = this.weight + num
-//             this.mood = this.mood + num
-//         } else {
-//             this.weight++
-//             this.mood++
-//         }
-//     }
+    eat(num) {
+        if (num) {
+            this.weight = this.weight + num
+            this.mood = this.mood + num
+        } else {
+            this.weight++
+            this.mood++
+        }
+    }
 
-//     exercise(num) {
-//         if (num) {
-//             this.weight = this.weight - num
-//         } else {
-//             this.weight--
-//         }
-//     }
+    exercise(num) {
+        if (num) {
+            this.weight = this.weight - num
+        } else {
+            this.weight--
+        }
+    }
 
-//     ageUp(num) {
-//         if (num) {
-//             this.age = this.age + num
-//             this.height = this.height + num
-//             this.weight = this.weight + num
-//             this.mood = this.mood - num
-//             this.bankAccount = this.bankAccount + (num * 10)
-//         } else {
-//             this.age++
-//             this.height++
-//             this.weight++
-//             this.mood--
-//             this.bankAccount += 10
-//         }
-//     }
+    ageUp(num) {
+        if (num) {
+            this.age = this.age + num
+            this.height = this.height + num
+            this.weight = this.weight + num
+            this.mood = this.mood - num
+            this.bankAccount = this.bankAccount + (num * 10)
+        } else {
+            this.age++
+            this.height++
+            this.weight++
+            this.mood--
+            this.bankAccount += 10
+        }
+    }
 
-//     buyHamster(hamsterPet) {
-//         this.hamsters.push(hamsterPet)
-//         this.mood += 10
-//         this.bankAccount = this.bankAccount - hamsterPet.getPrice()
-//     }
-// }
-// let hamsterPet = Hamster
-// console.log(Person)
+    buyHamster(hamsterObject) {
+        this.hamsters.push(hamsterObject)
+        this.mood += 10
+        this.bankAccount = this.bankAccount - hamsterObject.getPrice()
+    }
+}
 
+// let hamsterPet = Hamster  //declared this variable in order to be able to access Hamster class inside buyHamster function above
+
+//console.log(Person)
 
 
 /*
@@ -173,6 +174,10 @@ Feel free to update or add methods to automate some of these tasks.
 // timmy.buyHamster(gus)
 // console.log(timmy)
 
+// // timmy.buyHamster() ====>running this will give you an error, because the parameter must be an object in order to work
+// // timmy.buyHamster("random string") ====> running this will give you an error, because the parameter must be an object in order to work
+
+
 // //9.
 // timmy.ageUp(15)
 // console.log(timmy)
@@ -196,24 +201,24 @@ Add a method on chef that takes three arguments and returns a new Dinner based o
 Have the Chef create 3 dinners, log the dinners
 */
 
-class Dinner {
-    constructor(appetizer, entree, dessert) {
-        this.appetizer = appetizer,
-        this.entree = entree,
-        this.dessert = dessert
-    }
-}
+// class Dinner {
+//     constructor(appetizer, entree, dessert) {
+//         this.appetizer = appetizer,
+//         this.entree = entree,
+//         this.dessert = dessert
+//     }
+// }
 
-class Chef {
-    cooksNewDinner(newApp,newEntree,newDessert) {
-        let nextDinner = new Dinner(newApp,newEntree,newDessert)
-        console.log(nextDinner)
-    }
-}
+// class Chef {
+//     cooksNewDinner(newApp,newEntree,newDessert) {
+//         let nextDinner = new Dinner(newApp,newEntree,newDessert)
+//         console.log(nextDinner)
+//     }
+// }
 
-const headChef = new Chef
+// const headChef = new Chef
 
-headChef.cooksNewDinner("Caviar","Filet Mignon","Crème brûlée")
-headChef.cooksNewDinner("Pita and Hummus","Spinach gnocchi", "Strawberry Shortcake")
-headChef.cooksNewDinner("Buffalo Chicken Wings", "Bacon Cheeseburger", "Apple Pie")
+// headChef.cooksNewDinner("Caviar","Filet Mignon","Crème brûlée")
+// headChef.cooksNewDinner("Pita and Hummus","Spinach gnocchi", "Strawberry Shortcake")
+// headChef.cooksNewDinner("Buffalo Chicken Wings", "Bacon Cheeseburger", "Apple Pie")
 
